@@ -1,0 +1,242 @@
+:root{
+  --bg:#0f1724;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#ff0000;
+  --accent-dark:#c40000;
+  --gap:20px;
+  --radius:12px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(180deg,#071226 0%, #0f1724 100%);
+  color:#0b1020;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+
+main{
+  width:100%;
+  max-width:940px;
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.5);
+  transition:box-shadow .2s ease, transform .2s ease;
+}
+
+main:hover{
+  box-shadow:0 16px 40px rgba(2,6,23,0.6);
+  transform:translateY(-2px);
+}
+
+/* Header / brand */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--gap);
+  margin-bottom:18px;
+}
+
+.brand{display:flex;align-items:center;gap:16px}
+
+.avatar{
+  width:84px;
+  height:84px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 6px 18px rgba(2,6,23,0.12);
+  border:3px solid #fff;
+}
+
+.site-header h1{
+  margin:0;
+  font-size:1.3rem;
+  letter-spacing:0.6px;
+  color:#0b1020;
+  font-weight:800;
+}
+
+.tagline{
+  margin:0;
+  color:var(--muted);
+  font-size:0.95rem;
+  line-height:1.4;
+}
+
+/* Subscribe button */
+.subscribe{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:10px;
+  font-weight:700;
+  transition:background .15s ease, transform .1s ease, box-shadow .15s ease;
+  box-shadow:0 6px 14px rgba(255,0,0,0.18);
+}
+
+.subscribe:hover{
+  background:var(--accent-dark);
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 10px 24px rgba(255,0,0,0.25);
+}
+
+.subscribe:focus-visible{
+  outline:3px solid rgba(255,0,0,0.5);
+  outline-offset:3px;
+}
+
+/* About / bio */
+.about{margin-bottom:18px}
+.bio{
+  margin:0;
+  color:var(--muted);
+  font-size:0.98rem;
+  line-height:1.6;
+}
+
+/* Videos */
+.videos h2{
+  margin:8px 0 12px 0;
+  color:#0b1020;
+  font-weight:700;
+}
+
+.video-wrap{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  overflow:hidden;
+  border-radius:10px;
+  box-shadow:0 8px 24px rgba(2,6,23,0.08);
+}
+
+.video-wrap iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* Footer */
+.site-footer{
+  margin-top:20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* Responsive tweaks */
+@media (max-width:560px){
+  .site-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .subscribe{
+    width:100%;
+    text-align:center;
+  }
+
+  .avatar{
+    width:72px;
+    height:72px;
+  }
+
+  main{
+    padding:20px;
+  }
+}
+/* Minigame */
+.game {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+}
+
+.game h2 {
+  margin-top: 0;
+  font-weight: 800;
+}
+
+.game-desc {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.game-box {
+  text-align: center;
+}
+
+#start-btn, #restart-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+
+#start-btn:hover, #restart-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.option-btn {
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: border 0.15s ease, transform 0.1s ease;
+}
+
+.option-btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.option-btn.correct {
+  border-color: #16a34a;
+  background: #dcfce7;
+}
+
+.option-btn.wrong {
+  border-color: #dc2626;
+  background: #fee2e2;
+}
+
+.hidden {
+  display: none;
+}
+
+.progress, .high-score {
+  margin-top: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
